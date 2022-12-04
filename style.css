@@ -14,6 +14,7 @@ main {
 	left: 15%;
 	transform: translate(0, -50%);
 	transition: all 0.5s linear;
+	border: 2px solid red;
 }
 
 .kolumna {
@@ -23,10 +24,18 @@ main {
 	flex-direction: column;
 	justify-content: space-between;
 	height: 100vh;
-	transition: all 0.5s linear;
+	transition: all 0.1s linear;
+	gap: 200px;
 }
 .kolumna > img {
-	/* height: 400px;
-	width: 200px; */
+	width: 200px;
 	border: 1px solid black;
+}
+.score {
+	position: absolute;
+	top: 0;
+	right: 0;
+	font-size: 50px;
+	color: red;
+	font-family: 'Times New Roman', Times, serif;
 }

@@ -13,7 +13,7 @@ let game = true;
 function opadanie() {
 	florciaTop = florciaTop + 20;
 	florcia.style.top = `${florciaTop}px`;
-	if (florciaTop > window.innerHeight) {
+	if (florciaTop > window.innerHeight + 500) {
 		main.removeChild(florcia);
 		game = false;
 	}

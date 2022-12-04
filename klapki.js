@@ -1,7 +1,17 @@
 let monitorHeight = window.innerHeight;
 let monitorWidth = window.innerWidth;
 let rightPos;
+let score = 0;
+let speed = 15;
 function tworzenieKolumny() {
+	let randomizacja = Math.floor(Math.random() * 1000);
+	let ujemneDodatnie = Math.floor(Math.random() * 2);
+	console.log(ujemneDodatnie);
+	if (ujemneDodatnie) {
+		randomizacja = randomizacja;
+	} else {
+		randomizacja = -randomizacja;
+	}
 	const kolumna = document.createElement('div');
 	const gora = document.createElement('img');
 	const dol = document.createElement('img');
@@ -16,15 +26,19 @@ function tworzenieKolumny() {
 	kolumna.appendChild(gora);
 	kolumna.appendChild(dol);
 	main.appendChild(kolumna);
-	let klapki = kolumna.querySelectorAll('img');
-	klapki.forEach((klapek) => {
-		klapek.style.height = `${(monitorHeight - 200) / 2}px`;
-	});
+
+	gora.style.height = `${monitorHeight / 2 + randomizacja}px`;
+	dol.style.height = `${monitorHeight / 2 - randomizacja}px`;
 	rightPos = 0;
+
+	score++;
+	const scoreBoard = document.querySelector('.score');
+	scoreBoard.innerText = `Score = ${score}`;
+	speed += 1;
 }
 
 function przesuwanieKolumn() {
-	rightPos += 10;
+	rightPos += speed;
 	const kolumna = document.querySelector('.kolumna');
 	kolumna.style.right = `${rightPos}px`;
 	if (rightPos > monitorWidth + 200) {
