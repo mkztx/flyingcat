@@ -7,20 +7,34 @@ let florciaTop = window.innerHeight / 2;
 console.log(florciaTop);
 
 main.appendChild(florcia);
+let game = true;
 
+// TODO unbug after deleting florcia keeps occuring
 function opadanie() {
-	florciaTop = florciaTop + 10;
+	florciaTop = florciaTop + 20;
 	florcia.style.top = `${florciaTop}px`;
+	if (florciaTop > window.innerHeight) {
+		main.removeChild(florcia);
+		game = false;
+	}
 }
 
-function podskok() {
-	florciaTop = florciaTop - 200;
+async function podskok() {
+	if (florciaTop <= 0) {
+		florciaTop += 200;
+	} else {
+		florciaTop = florciaTop - 200;
+	}
 	florcia.style.top = `${florciaTop}px`;
 }
 
 opadanie();
-setInterval(() => {
-	opadanie();
+let opadaniekota = setInterval(() => {
+	if (game) {
+		opadanie();
+	} else {
+		clearInterval(opadaniekota);
+	}
 }, 50);
 
 document.addEventListener('keydown', () => {

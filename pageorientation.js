@@ -1,6 +1,5 @@
 let height = window.innerHeight;
 let width = window.innerWidth;
-
 if (height > width) {
 	florcia.style.width = '15%';
 	florcia.style.aspectRatio = '2/1';

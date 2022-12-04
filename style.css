@@ -1,6 +1,8 @@
 * {
 	padding: 0;
 	margin: 0;
+
+	overflow: hidden;
 }
 main {
 	width: 100%;
@@ -12,4 +14,19 @@ main {
 	left: 15%;
 	transform: translate(0, -50%);
 	transition: all 0.5s linear;
+}
+
+.kolumna {
+	overflow: hidden;
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100vh;
+	transition: all 0.5s linear;
+}
+.kolumna > img {
+	/* height: 400px;
+	width: 200px; */
+	border: 1px solid black;
 }
