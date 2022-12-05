@@ -18,7 +18,10 @@ function tworzenieKolumny() {
 
 	kolumna.classList.add('kolumna');
 	kolumna.style.right = '-200px';
-
+	if (window.innerHeight > window.innerWidth) {
+		gora.style.width = `100px`;
+		dol.style.width = `100px`;
+	}
 	gora.setAttribute('src', './images/klapekgora.png');
 	gora.classList.add('gora');
 	dol.setAttribute('src', './images/klapekdol.png');
@@ -37,7 +40,11 @@ function tworzenieKolumny() {
 }
 
 function przesuwanieKolumn() {
-	rightPos += speed;
+	if (window.innerHeight > window.innerWidth) {
+		rightPos += speed / 2;
+	} else {
+		rightPos += speed;
+	}
 	const kolumna = document.querySelector('.kolumna');
 	kolumna.style.right = `${rightPos}px`;
 	if (rightPos > monitorWidth + 200) {
