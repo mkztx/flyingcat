@@ -20,6 +20,7 @@ function opadanie() {
 	if (florciaTop > window.innerHeight + 500) {
 		main.removeChild(florcia);
 		game = false;
+		lose();
 	}
 }
 
