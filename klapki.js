@@ -31,7 +31,6 @@ function tworzenieKolumny() {
 	dol.style.height = `${monitorHeight / 2 - randomizacja}px`;
 	rightPos = 0;
 
-	score++;
 	const scoreBoard = document.querySelector('.score');
 	scoreBoard.innerText = `Score = ${score}`;
 	speed += 1;
@@ -42,6 +41,7 @@ function przesuwanieKolumn() {
 	const kolumna = document.querySelector('.kolumna');
 	kolumna.style.right = `${rightPos}px`;
 	if (rightPos > monitorWidth + 200) {
+		score++;
 		main.removeChild(kolumna);
 		tworzenieKolumny();
 	}

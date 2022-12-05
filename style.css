@@ -13,8 +13,11 @@ main {
 	position: absolute;
 	left: 15%;
 	transform: translate(0, -50%);
-	transition: all 0.5s linear;
+	transition: all 0.2s linear;
 	border: 2px solid red;
+	/* border-top-right-radius: 50%;
+	border-bottom-right-radius: 50%;
+	border-bottom-left-radius: 80%; */
 }
 
 .kolumna {
@@ -30,7 +33,15 @@ main {
 .kolumna > img {
 	width: 200px;
 	border: 1px solid black;
+	/* border-radius: 20%; */
+	transform: scaleX(-1);
 }
+/* .kolumna > img:first-child {
+	border-bottom-left-radius: 50%;
+}
+.kolumna > img:last-child {
+	border-top-left-radius: 50%;
+} */
 .score {
 	position: absolute;
 	top: 0;
