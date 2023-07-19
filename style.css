@@ -17,7 +17,7 @@ main {
 	left: 15%;
 	transform: translate(0, -50%);
 	transition: all 0.2s linear;
-	border: 2px solid red;
+	/* border: 2px solid red; */
 	/* border-top-right-radius: 50%;
 	border-bottom-right-radius: 50%;
 	border-bottom-left-radius: 80%; */
@@ -36,7 +36,7 @@ main {
 }
 .kolumna > img {
 	width: 200px;
-	border: 1px solid black;
+	/* border: 1px solid black; */
 	/* border-radius: 20%; */
 	transform: scaleX(-1);
 }
